@@ -1,39 +1,31 @@
-// Inside the event listener for form submission
-if (x === '') {
-    document.getElementById('usernameError').textContent = 'Username must be filled out';
+
+const myForm = document.forms['myForm'];
+
+myForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  let x = myForm['fname'].value;
+  let y = myForm['phoneNumber'].value;
+  let z = myForm['phoneNumber1'].value;
+
+  if (x === '') {
+    alert('Username must be filled out');
+    return;
+  } else if (!/^[A-Za-z]+$/.test(x)) {
+    alert('Username must contain only letters');
+    return;
+  } else if (y === '') {
+    alert('Password must be filled out');
+    return;
+  } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/.test(y)) {
+    alert('Password must contain at least 8 symbols (digit, letters, special characters)');
+    return;
+  } else if (y !== z) {
+    alert('Passwords must match');
     return;
   } else {
-    document.getElementById('usernameError').textContent = ''; // Clear error message
+    alert("Success! YAAAY");
   }
-  
-  if (!/^[A-Za-z]+$/.test(x)) {
-    document.getElementById('usernameError').textContent = 'Username must contain only letters';
-    return;
-  } else {
-    document.getElementById('usernameError').textContent = ''; // Clear error message
-  }
-  
-  if (y === '') {
-    document.getElementById('passwordError').textContent = 'Password must be filled out';
-    return;
-  } else {
-    document.getElementById('passwordError').textContent = ''; // Clear error message
-  }
-  
-  if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/.test(y)) {
-    document.getElementById('passwordError').textContent = 'Password must contain at least 8 symbols (digit, letters, special characters)';
-    return;
-  } else {
-    document.getElementById('passwordError').textContent = ''; // Clear error message
-  }
-  
-  if (y !== z) {
-    document.getElementById('confirmPasswordError').textContent = 'Passwords must match';
-    return;
-  } else {
-    document.getElementById('confirmPasswordError').textContent = ''; // Clear error message
-  }
-  
-  // If all validations pass, submit the form
+
   myForm.submit();
-  
+});

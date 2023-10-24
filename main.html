@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+</head>
+<body>
+    <section class="form" style="color: rgb(132, 3, 3)" id="registration-form">
+        <div class="container">
+          <h1>Sign up!</h1>
+          <p>write information abt you</p>
+        </div>
+        <div class="container reg">
+          <form
+            name="myForm"
+            id="signup-form"
+            onsubmit="return validateForm()"
+            method="post"
+            novalidate
+          >
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Name"
+                name="fname"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPhone1" class="form-label"
+                >password</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputPhone1"
+                placeholder="********"
+                name="phoneNumber"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPhone1" class="form-label"
+                  >confirm password</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputPhone1"
+                  placeholder="********"
+                  name="phoneNumber1"
+                  required
+                />
+              </div>
+            <button type="submit" class="btn sub btn-primary" id="registerButton">Register</button>
+          </form>
+        </div>
+      </section>
+</body>
+</html>
